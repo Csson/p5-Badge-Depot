@@ -9,6 +9,8 @@ name: Badge-Depot
      - Moose::Role: 2.0000
      - Types::Standard
      - Types::URI
+     - MooseX::AttributeShortcuts
+     - namespace::autoclean
   test:
     requires:
       - Moose: 2.0000

@@ -90,8 +90,10 @@
       "runtime" : {
          "requires" : {
             "Moose::Role" : "2.0000",
+            "MooseX::AttributeShortcuts" : "0",
             "Types::Standard" : "0",
             "Types::URI" : "0",
+            "namespace::autoclean" : "0",
             "perl" : "5.010001"
          }
       },
