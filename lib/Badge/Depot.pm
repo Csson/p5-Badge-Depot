@@ -1,60 +1,66 @@
-use 5.14.0;
 use strict;
 use warnings;
-use Badge::Depot::Standard;
 
-# PODCLASSNAME
+package Badge::Depot;
 
-role Badge::Depot using Moose {
+# VERSION
+# ABSTRACT: A framework for badges
 
-    # VERSION
-    # ABSTRACT: A framework for badges
+use Moose::Role;
+use Types::URI qw/Uri/;
+use Types::Standard qw/Str/;
+use MooseX::AttributeShortcuts;
+use namespace::autoclean;
 
-    has image_url => (
-        is => 'rw',
-        isa => Uri,
-        init_arg => undef,
-        coerce => 1,
-        predicate => 1,
-    );
-    has image_alt => (
-        is => 'rw',
-        isa => Str,
-        init_arg => undef,
-        predicate => 1,
-    );
-    has link_url => (
-        is => 'rw',
-        isa => Uri,
-        init_arg => undef,
-        coerce => 1,
-        predicate => 1,
-    );
+has image_url => (
+    is => 'rw',
+    isa => Uri,
+    init_arg => undef,
+    coerce => 1,
+    predicate => 1,
+);
+has image_alt => (
+    is => 'rw',
+    isa => Str,
+    init_arg => undef,
+    predicate => 1,
+);
+has link_url => (
+    is => 'rw',
+    isa => Uri,
+    init_arg => undef,
+    coerce => 1,
+    predicate => 1,
+);
 
-    around to_html, to_markdown($next: $self) {
-        return '' if !$self->has_image_url;
-        $self->$next;
+around qw/to_html to_markdown/ => sub {
+    my $next = shift;
+    my $self = shift;
+
+    return '' if !$self->has_image_url;
+    $self->$next;
+};
+
+sub to_html {
+    my $self = shift;
+
+    my $image_text = $self->has_image_alt ? sprintf ' alt="%s"', $self->image_alt : '';
+
+    if($self->has_link_url) {
+        return sprintf q{<a href="%s"><img src="%s"%s /></a>}, $self->link_url, $self->image_url, $image_text;
     }
-
-    method to_html {
-
-        my $image_text = $self->has_image_alt ? sprintf ' alt="%s"', $self->image_alt : '';
-
-        if($self->has_link_url) {
-            return sprintf q{<a href="%s"><img src="%s"%s /></a>}, $self->link_url, $self->image_url, $image_text;
-        }
-        else {
-            return sprintf q{<img src="%s"%s />}, $self->image_url, $image_text;
-        }
+    else {
+        return sprintf q{<img src="%s"%s />}, $self->image_url, $image_text;
     }
-    method to_markdown {
+}
+sub to_markdown {
+    my $self = shift;
 
-        if($self->has_link_url) {
-            return sprintf q<[![%s](%s)](%s)>, $self->image_alt // '', $self->image_url, $self->link_url;
-        }
-        else {
-            return sprintf q<![%s](%s)]>, $self->image_alt // '', $self->image_url;
-        }
+    if($self->has_link_url) {
+        return sprintf q<[![%s](%s)](%s)>, $self->image_alt // '', $self->image_url, $self->link_url;
+    }
+    else {
+        return sprintf q<![%s](%s)]>, $self->image_alt // '', $self->image_url;
     }
 }
 
