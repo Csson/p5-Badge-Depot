@@ -77,7 +77,7 @@ __END__
 
     use Moose;
     with 'Badge::Depot';
-    
+
     has user => (
         is => 'ro',
         isa => 'Str',
@@ -112,7 +112,7 @@ C<Badge::Depot> is a L<Moose> role that adds a few attributes and methods.
 
 =head1 ATTRIBUTES
 
-These attributes are expected to be set when the badge class returns from C<new>. See L<synopsis|/SYNOPSIS>. 
+These attributes are expected to be set when the badge class returns from C<new>. See L<synopsis|/SYNOPSIS>.
 
 
 =head2 image_url
