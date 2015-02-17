@@ -67,9 +67,9 @@
             "Dist::Zilla::Plugin::ShareDir" : "0",
             "Dist::Zilla::Plugin::Test::ReportPrereqs" : "0",
             "Dist::Zilla::Plugin::TestRelease" : "0",
+            "Dist::Zilla::Plugin::TravisYML" : "0",
             "Dist::Zilla::Plugin::UploadToCPAN" : "0",
             "Pod::Elemental::Transformer::List" : "0",
-            "Pod::Elemental::Transformer::Splint" : "0",
             "Pod::Weaver::Plugin::SingleEncoding" : "0",
             "Pod::Weaver::Plugin::Transformer" : "0",
             "Pod::Weaver::PluginBundle::CorePrep" : "0",
@@ -88,12 +88,10 @@
       },
       "runtime" : {
          "requires" : {
-            "Moops" : "0.034",
-            "Moose" : "2.0000",
-            "MooseX::AttributeDocumented" : "0",
+            "Moose::Role" : "2.0000",
             "Types::Standard" : "0",
             "Types::URI" : "0",
-            "perl" : "5.014000"
+            "perl" : "5.010001"
          }
       },
       "test" : {
@@ -103,6 +101,7 @@
          "requires" : {
             "ExtUtils::MakeMaker" : "0",
             "File::Spec" : "0",
+            "Moose" : "2.0000",
             "Test::More" : "0.96"
          }
       }
@@ -111,14 +110,20 @@
       "Badge::Depot" : {
          "file" : "lib/Badge/Depot.pm",
          "version" : "0.0001"
-      },
-      "Badge::Depot::Standard" : {
-         "file" : "lib/Badge/Depot/Standard.pm",
-         "version" : "0.0001"
       }
    },
    "release_status" : "stable",
-   "resources" : {},
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/Csson/p5-Badge-Depot/issues"
+      },
+      "homepage" : "https://metacpan.org/release/Badge-Depot",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/Csson/p5-Badge-Depot.git",
+         "web" : "https://github.com/Csson/p5-Badge-Depot"
+      }
+   },
    "version" : "0.0001"
 }
 
