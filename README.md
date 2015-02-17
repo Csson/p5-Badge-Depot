@@ -13,7 +13,7 @@ Version 0.0101, released 2015-02-17.
 
     use Moose;
     with 'Badge::Depot';
-    
+
     has user => (
         is => 'ro',
         isa => 'Str',
@@ -46,7 +46,7 @@ You only need use this distribution directly if you want to create a new badge i
 
 # ATTRIBUTES
 
-These attributes are expected to be set when the badge class returns from `new`. See [synopsis](#synopsis). 
+These attributes are expected to be set when the badge class returns from `new`. See [synopsis](#synopsis).
 
 ## image\_url
 
