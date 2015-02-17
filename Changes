@@ -10,16 +10,24 @@ Revision history for Badge-Depot
  [Enhancements]
 
  [Meta]
- - Removed (unnecessary) cpanfile
 
  [New Features]
 
  [Requirements]
- - Added a dev prereq (in order to link to github from pod).
 
  [Revision]
 
  [Testing]
 
+0.0101 2015-02-17T21:35:56Z CET
+ [Meta]
+ - Removed (unnecessary) cpanfile.
+
+ [Requirements]
+ - Listed as prereq: MooseX::AttributeShortcuts.
+ - Listed as prereq: namespace::autoclean.
+ - Added a dev prereq (in order to link to github from pod).
+
 0.0100 2015-02-17T21:19:06Z CET
  - Initial release
+
