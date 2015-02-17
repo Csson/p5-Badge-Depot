@@ -4,7 +4,7 @@ Badge::Depot - A framework for badges
 
 # VERSION
 
-Version 0.0001, released 2015-02-17.
+Version 0.0101, released 2015-02-17.
 
 # SYNOPSIS
 
@@ -81,6 +81,10 @@ Returns a string with the badge rendered as markdown.
 # SEE ALSO
 
 - [WWW::StatusBadge](https://metacpan.org/pod/WWW::StatusBadge)
+
+# SOURCE
+
+[https://github.com/Csson/p5-Badge-Depot](https://github.com/Csson/p5-Badge-Depot)
 
 # HOMEPAGE
 

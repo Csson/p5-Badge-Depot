@@ -1,4 +1,25 @@
 Revision history for Badge-Depot
 
 {{$NEXT}}
-     - Initial release
+ [API Changes]
+
+ [Bug Fixes]
+
+ [Documentation]
+
+ [Enhancements]
+
+ [Meta]
+ - Removed (unnecessary) cpanfile
+
+ [New Features]
+
+ [Requirements]
+ - Added a dev prereq (in order to link to github from pod).
+
+ [Revision]
+
+ [Testing]
+
+0.0100 2015-02-17T21:19:06Z CET
+ - Initial release

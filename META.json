@@ -81,6 +81,7 @@
             "Pod::Weaver::Section::Legal" : "0",
             "Pod::Weaver::Section::Name" : "0",
             "Pod::Weaver::Section::Region" : "0",
+            "Pod::Weaver::Section::Source::DefaultGitHub" : "0",
             "Pod::Weaver::Section::Version" : "0",
             "Test::Pod" : "1.41",
             "Test::Warnings" : "0"
@@ -109,7 +110,7 @@
    "provides" : {
       "Badge::Depot" : {
          "file" : "lib/Badge/Depot.pm",
-         "version" : "0.0001"
+         "version" : "0.0101"
       }
    },
    "release_status" : "stable",
@@ -124,6 +125,6 @@
          "web" : "https://github.com/Csson/p5-Badge-Depot"
       }
    },
-   "version" : "0.0001"
+   "version" : "0.0101"
 }
 
