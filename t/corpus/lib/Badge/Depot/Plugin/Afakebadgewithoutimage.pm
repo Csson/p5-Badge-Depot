@@ -1,13 +1,22 @@
-use Badge::Depot::Standard;
+use strict;
+use warnings;
 
-class Badge::Depot::Plugin::Afakebadgewithoutimage using Moose with Badge::Depot {
+package Badge::Depot::Plugin::Afakebadgewithoutimage;
 
-    has username => (
-        is => 'ro',
-        isa => Str,
-    );
+use Moose;
+use namespace::autoclean;
+use MooseX::AttributeShortcuts;
+use Types::Standard qw/Str Bool/;
+with 'Badge::Depot';
 
-    method BUILD {
-        $self->link_url(sprintf q{https://travis-ci.org/%s}, $self->username);
-    }
+has username => (
+    is => 'ro',
+    isa => Str,
+);
+
+sub BUILD {
+    my $self = shift;
+    $self->link_url(sprintf q{https://travis-ci.org/%s}, $self->username);
 }
+
+1;
