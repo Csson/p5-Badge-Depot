@@ -8,24 +8,26 @@ use Badge::Depot::Standard;
 role Badge::Depot using Moose {
 
     # VERSION
-    # ABSTRACT: Short intro
+    # ABSTRACT: A framework for badges
 
-    has link_url => (
-        is => 'ro',
-        isa => Uri,
-        init_arg => undef,
-        predicate => 1,
-    );
     has image_url => (
-        is => 'ro',
+        is => 'rw',
         isa => Uri,
         init_arg => undef,
+        coerce => 1,
         predicate => 1,
     );
     has image_alt => (
-        is => 'ro',
+        is => 'rw',
         isa => Str,
         init_arg => undef,
+        predicate => 1,
+    );
+    has link_url => (
+        is => 'rw',
+        isa => Uri,
+        init_arg => undef,
+        coerce => 1,
         predicate => 1,
     );
 
@@ -42,7 +44,7 @@ role Badge::Depot using Moose {
             return sprintf q{<a href="%s"><img src="%s"%s /></a>}, $self->link_url, $self->image_url, $image_text;
         }
         else {
-            return sprintf q{<img src="%s"%s />}, $self->link_url, $self->image_url, $image_text;
+            return sprintf q{<img src="%s"%s />}, $self->image_url, $image_text;
         }
     }
     method to_markdown {
@@ -58,19 +60,92 @@ role Badge::Depot using Moose {
 
 1;
 
-
 __END__
 
 =pod
 
 =head1 SYNOPSIS
 
-    use Badge::Depot;
+    # Define a badge class
+    package Badge::Depot::Plugin::Example;
+
+    use Moose;
+    with 'Badge::Depot';
+    
+    has user => (
+        is => 'ro',
+        isa => 'Str',
+        required => 1,
+    );
+
+    sub BUILD {
+        my $self = shift;
+        $self->link_url(sprintf 'https://example.com/users/%s', $self->user);
+        $self->image_url(sprintf 'https://example.com/users/%s.svg', $self->user);
+        $self->image_alt('Example text');
+    }
+
+    # Somewhere else
+    my $badge = Badge::Depot::Plugin::Example->new(user => 'my_username');
+
+    print $badge->to_html;
+    # prints '<a href="https://example.com/users/my_username"><img src="https://example.com/users/my_username.svg" alt="Example text" /></a>'
+
 
 =head1 DESCRIPTION
 
-Badge::Depot is ...
+C<Badge::Depot> is a framework for documentation badges. Using badges in your documentation can give
+end users of your distribution dynamic information without you having to update the documentation.
+
+You only need use this distribution directly if you want to create a new badge in the C<Badge::Depot::Plugin> namespace.
+
+=head1 OVERVIEW
+
+C<Badge::Depot> is a L<Moose> role that adds a few attributes and methods.
+
+
+=head1 ATTRIBUTES
+
+These attributes are expected to be set when the badge class returns from C<new>. See L<synopsis|/SYNOPSIS>. 
+
+
+=head2 image_url
+
+Required. L<Uri|Types::Uri>.
+
+The url to the actual badge. The src attribute for the img tag when rendered to html.
+
+
+=head2 image_alt
+
+Optional. L<Str|Types::Standard>.
+
+The alternative text of the badge. The alt attribute for the img tag when rendered to html. No alternative text is created if this isn't set.
+
+
+=head2 link_url
+
+Optional (but recommended). L<Uri|Types::Uri>.
+
+The url to link the badge to. The href attribute for the a tag when rendered to html. No link is created if this isn't set.
+
+
+=head1 METHODS
+
+These methods are used when rendering the badge, and are not useful inside badge classes.
+
+=head2 to_html
+
+Returns a string with the badge rendered as html.
+
+=head2 to_markdown
+
+Returns a string with the badge rendered as markdown.
+
 
 =head1 SEE ALSO
+
+=for :list
+* L<WWW::StatusBadge>
 
 =cut

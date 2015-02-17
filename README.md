@@ -1,6 +1,6 @@
 # NAME
 
-Badge::Depot - Short intro
+Badge::Depot - A framework for badges
 
 # VERSION
 
@@ -8,13 +8,79 @@ Version 0.0001, released 2015-02-17.
 
 # SYNOPSIS
 
-    use Badge::Depot;
+    # Define a badge class
+    package Badge::Depot::Plugin::Example;
+
+    use Moose;
+    with 'Badge::Depot';
+    
+    has user => (
+        is => 'ro',
+        isa => 'Str',
+        required => 1,
+    );
+
+    sub BUILD {
+        my $self = shift;
+        $self->link_url(sprintf 'https://example.com/users/%s', $self->user);
+        $self->image_url(sprintf 'https://example.com/users/%s.svg', $self->user);
+        $self->image_alt('Example text');
+    }
+
+    # Somewhere else
+    my $badge = Badge::Depot::Plugin::Example->new(user => 'my_username');
+
+    print $badge->to_html;
+    # prints '<a href="https://example.com/users/my_username"><img src="https://example.com/users/my_username.svg" alt="Example text" /></a>'
 
 # DESCRIPTION
 
-Badge::Depot is ...
+`Badge::Depot` is a framework for documentation badges. Using badges in your documentation can give
+end users of your distribution dynamic information without you having to update the documentation.
+
+You only need use this distribution directly if you want to create a new badge in the `Badge::Depot::Plugin` namespace.
+
+# OVERVIEW
+
+`Badge::Depot` is a [Moose](https://metacpan.org/pod/Moose) role that adds a few attributes and methods.
+
+# ATTRIBUTES
+
+These attributes are expected to be set when the badge class returns from `new`. See [synopsis](#synopsis). 
+
+## image\_url
+
+Required. [Uri](https://metacpan.org/pod/Types::Uri).
+
+The url to the actual badge. The src attribute for the img tag when rendered to html.
+
+## image\_alt
+
+Optional. [Str](https://metacpan.org/pod/Types::Standard).
+
+The alternative text of the badge. The alt attribute for the img tag when rendered to html. No alternative text is created if this isn't set.
+
+## link\_url
+
+Optional (but recommended). [Uri](https://metacpan.org/pod/Types::Uri).
+
+The url to link the badge to. The href attribute for the a tag when rendered to html. No link is created if this isn't set.
+
+# METHODS
+
+These methods are used when rendering the badge, and are not useful inside badge classes.
+
+## to\_html
+
+Returns a string with the badge rendered as html.
+
+## to\_markdown
+
+Returns a string with the badge rendered as markdown.
 
 # SEE ALSO
+
+- [WWW::StatusBadge](https://metacpan.org/pod/WWW::StatusBadge)
 
 # HOMEPAGE
 
