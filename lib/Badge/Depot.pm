@@ -117,7 +117,7 @@ These attributes are expected to be set when the badge class returns from C<new>
 
 =head2 image_url
 
-Required. L<Uri|Types::Uri>.
+Required. L<Uri|Types::URI>.
 
 The url to the actual badge. The src attribute for the img tag when rendered to html.
 
@@ -131,7 +131,7 @@ The alternative text of the badge. The alt attribute for the img tag when render
 
 =head2 link_url
 
-Optional (but recommended). L<Uri|Types::Uri>.
+Optional (but recommended). L<Uri|Types::URI>.
 
 The url to link the badge to. The href attribute for the a tag when rendered to html. No link is created if this isn't set.
 
@@ -152,6 +152,6 @@ Returns a string with the badge rendered as markdown.
 =head1 SEE ALSO
 
 =for :list
-* L<WWW::StatusBadge>
+* L<WWW::StatusBadge> (an alternative to this)
 
 =cut
