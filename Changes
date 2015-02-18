@@ -19,6 +19,10 @@ Revision history for Badge-Depot
 
  [Testing]
 
+0.0102 2015-02-18T14:23:27Z CET
+ [Documentation]
+ - Fixed links to Types::URI.
+
 0.0101 2015-02-17T21:35:56Z CET
  [Meta]
  - Removed (unnecessary) cpanfile.
