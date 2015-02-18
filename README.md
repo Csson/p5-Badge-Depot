@@ -4,7 +4,7 @@ Badge::Depot - A framework for badges
 
 # VERSION
 
-Version 0.0101, released 2015-02-17.
+Version 0.0102, released 2015-02-18.
 
 # SYNOPSIS
 
@@ -50,7 +50,7 @@ These attributes are expected to be set when the badge class returns from `new`.
 
 ## image\_url
 
-Required. [Uri](https://metacpan.org/pod/Types::Uri).
+Required. [Uri](https://metacpan.org/pod/Types::URI).
 
 The url to the actual badge. The src attribute for the img tag when rendered to html.
 
@@ -62,7 +62,7 @@ The alternative text of the badge. The alt attribute for the img tag when render
 
 ## link\_url
 
-Optional (but recommended). [Uri](https://metacpan.org/pod/Types::Uri).
+Optional (but recommended). [Uri](https://metacpan.org/pod/Types::URI).
 
 The url to link the badge to. The href attribute for the a tag when rendered to html. No link is created if this isn't set.
 
@@ -80,7 +80,7 @@ Returns a string with the badge rendered as markdown.
 
 # SEE ALSO
 
-- [WWW::StatusBadge](https://metacpan.org/pod/WWW::StatusBadge)
+- [WWW::StatusBadge](https://metacpan.org/pod/WWW::StatusBadge) (an alternative to this)
 
 # SOURCE
 
