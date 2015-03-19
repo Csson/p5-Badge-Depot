@@ -4,7 +4,7 @@ Badge::Depot - A framework for badges
 
 # VERSION
 
-Version 0.0102, released 2015-02-18.
+Version 0.0103, released 2015-03-19.
 
 # SYNOPSIS
 
@@ -38,7 +38,10 @@ Version 0.0102, released 2015-02-18.
 `Badge::Depot` is a framework for documentation badges. Using badges in your documentation can give
 end users of your distribution dynamic information without you having to update the documentation.
 
-You only need use this distribution directly if you want to create a new badge in the `Badge::Depot::Plugin` namespace.
+You only need use this distribution directly if you want to create a new badge in the `Badge::Depot::Plugin` namespace. See [Task::Badge::Depot](https://metacpan.org/pod/Task::Badge::Depot) for
+a list of existing badges.
+
+For use together with [Pod::Weaver](https://metacpan.org/pod/Pod::Weaver), see [Pod::Weaver::Section::Badges](https://metacpan.org/pod/Pod::Weaver::Section::Badges).
 
 # OVERVIEW
 
@@ -80,7 +83,9 @@ Returns a string with the badge rendered as markdown.
 
 # SEE ALSO
 
-- [WWW::StatusBadge](https://metacpan.org/pod/WWW::StatusBadge) (an alternative to this)
+- [Task::Badge::Depot](https://metacpan.org/pod/Task::Badge::Depot) - List of available badges
+- [Pod::Weaver::Section::Badges](https://metacpan.org/pod/Pod::Weaver::Section::Badges) - Weave the badges
+- [WWW::StatusBadge](https://metacpan.org/pod/WWW::StatusBadge) - An alternative badge framework
 
 # SOURCE
 

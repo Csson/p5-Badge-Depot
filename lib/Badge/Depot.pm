@@ -60,7 +60,7 @@ sub to_markdown {
         return sprintf q<[![%s](%s)](%s)>, $self->image_alt // '', $self->image_url, $self->link_url;
     }
     else {
-        return sprintf q<![%s](%s)]>, $self->image_alt // '', $self->image_url;
+        return sprintf q<![%s](%s)>, $self->image_alt // '', $self->image_url;
     }
 }
 
@@ -103,7 +103,10 @@ __END__
 C<Badge::Depot> is a framework for documentation badges. Using badges in your documentation can give
 end users of your distribution dynamic information without you having to update the documentation.
 
-You only need use this distribution directly if you want to create a new badge in the C<Badge::Depot::Plugin> namespace.
+You only need use this distribution directly if you want to create a new badge in the C<Badge::Depot::Plugin> namespace. See L<Task::Badge::Depot> for
+a list of existing badges.
+
+For use together with L<Pod::Weaver>, see L<Pod::Weaver::Section::Badges>.
 
 =head1 OVERVIEW
 
@@ -152,6 +155,8 @@ Returns a string with the badge rendered as markdown.
 =head1 SEE ALSO
 
 =for :list
-* L<WWW::StatusBadge> (an alternative to this)
+* L<Task::Badge::Depot> - List of available badges
+* L<Pod::Weaver::Section::Badges> - Weave the badges
+* L<WWW::StatusBadge> - An alternative badge framework
 
 =cut

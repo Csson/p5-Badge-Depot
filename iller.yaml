@@ -1,8 +1,10 @@
 ---
-+doctype: dist
-name: Badge-Depot
+doctype: dist
 
-+prereqs:
+header:
+  name: Badge-Depot
+
+prereqs:
   runtime:
     requires:
      - perl: 5.010001
@@ -15,7 +17,7 @@ name: Badge-Depot
     requires:
       - Moose: 2.0000
 
-+plugins:
+plugins:
  - +config: Author::CSSON
 
  - +add_plugin: TravisYML
@@ -23,9 +25,9 @@ name: Badge-Depot
    perl_version: 5.10.1 5.14 5.20
 
 ---
-+doctype: weaver
+doctype: weaver
 
-+plugins:
+plugins:
  - +config: Author::CSSON
 
  - +remove_plugin: Splint

@@ -112,7 +112,7 @@
    "provides" : {
       "Badge::Depot" : {
          "file" : "lib/Badge/Depot.pm",
-         "version" : "0.0102"
+         "version" : "0.0103"
       }
    },
    "release_status" : "stable",
@@ -127,6 +127,6 @@
          "web" : "https://github.com/Csson/p5-Badge-Depot"
       }
    },
-   "version" : "0.0102"
+   "version" : "0.0103"
 }
 

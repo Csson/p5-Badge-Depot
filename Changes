@@ -4,12 +4,15 @@ Revision history for Badge-Depot
  [API Changes]
 
  [Bug Fixes]
+ - Fixed a markdown syntax error.
 
  [Documentation]
+ - Added link to Task::Badge::Depot.
 
  [Enhancements]
 
  [Meta]
+ - Updated iller.yaml syntax.
 
  [New Features]
 

@@ -88,7 +88,7 @@ my $tests = [
             },
             {
                 method => 'to_markdown',
-                expected => '![](https://travis-ci.org/fakeuser/fakerepo.svg?branch=master)]',
+                expected => '![](https://travis-ci.org/fakeuser/fakerepo.svg?branch=master)',
                 name => 'Correct markdown',
             }
         ],
@@ -115,7 +115,7 @@ my $tests = [
             },
             {
                 method => 'to_markdown',
-                expected => '![Fake alt text](https://travis-ci.org/fakeuser/fakerepo.svg?branch=master)]',
+                expected => '![Fake alt text](https://travis-ci.org/fakeuser/fakerepo.svg?branch=master)',
                 name => 'Correct markdown',
             }
         ],
