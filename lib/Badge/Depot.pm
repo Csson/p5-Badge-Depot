@@ -5,7 +5,7 @@ package Badge::Depot;
 
 # ABSTRACT: A framework for badges
 # AUTHORITY
-our $VERSION = '0.0104';
+our $VERSION = '0.0105';
 
 use Moose::Role;
 use Types::URI qw/Uri/;
