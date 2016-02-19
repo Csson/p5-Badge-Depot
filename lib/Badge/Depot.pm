@@ -3,12 +3,13 @@ use warnings;
 
 package Badge::Depot;
 
-# VERSION
 # ABSTRACT: A framework for badges
+# AUTHORITY
+our $VERSION = '0.0104';
 
 use Moose::Role;
 use Types::URI qw/Uri/;
-use Types::Standard qw/Str/;
+use Types::Standard qw/Str InstanceOf/;
 use MooseX::AttributeShortcuts;
 use namespace::autoclean;
 
@@ -32,6 +33,12 @@ has link_url => (
     coerce => 1,
     predicate => 1,
 );
+has zilla => (
+    is => 'ro',
+    isa => InstanceOf['Dist::Zilla'],
+    predicate => 1,
+);
+
 
 around qw/to_html to_markdown/ => sub {
     my $next = shift;
@@ -138,6 +145,10 @@ Optional (but recommended). L<Uri|Types::URI>.
 
 The url to link the badge to. The href attribute for the a tag when rendered to html. No link is created if this isn't set.
 
+
+=head2 zilla
+
+This is not a user setable attribute, but rather can be used by plugins that might need to look at distribution meta data. This is only usable when using L<Pod::Weaver::Section::Badges> together with L<Dist::Zilla>.
 
 =head1 METHODS
 
