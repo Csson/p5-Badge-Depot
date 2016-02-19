@@ -7,7 +7,7 @@ header:
 prereqs:
   runtime:
     requires:
-     - perl: 5.010001
+     - perl: 5.010000
      - Moose::Role: 2.0000
      - Types::Standard
      - Types::URI
@@ -20,14 +20,17 @@ prereqs:
 plugins:
  - +config: Author::CSSON
 
- - +add_plugin: TravisYML
-   +before: Git::Tag
-   perl_version: 5.10.1 5.14 5.20
-
 ---
 doctype: weaver
 
 plugins:
  - +config: Author::CSSON
 
- - +remove_plugin: Splint
+---
+doctype: cpanfile
+
+---
+doctype: gitignore
+config: Author::CSSON
+always:
+ - /Badge-Depot-*

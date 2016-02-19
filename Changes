@@ -12,6 +12,7 @@ Revision history for Badge-Depot
  [Meta]
 
  [New Features]
+ - New attribute 'zilla' that exposes the Dist::Zilla object if Badge::Depot is used via Pod::Weaver::Section::Badges during a Dist::Zilla build.
 
  [Requirements]
 
