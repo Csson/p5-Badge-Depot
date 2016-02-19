@@ -4,7 +4,7 @@ Badge::Depot - A framework for badges
 
 # VERSION
 
-Version 0.0103, released 2015-03-19.
+Version 0.0104, released 2015-03-21.
 
 # SYNOPSIS
 
