@@ -2,9 +2,18 @@
 
 Badge::Depot - A framework for badges
 
+<div>
+    <p>
+    <img src="https://img.shields.io/badge/perl-5.10+-blue.svg" alt="Requires Perl 5.10+" />
+    <a href="https://travis-ci.org/Csson/p5-Badge-Depot"><img src="https://api.travis-ci.org/Csson/p5-Badge-Depot.svg?branch=master" alt="Travis status" /></a>
+    <a href="http://cpants.cpanauthors.org/dist/Badge-Depot-0.0104"><img src="https://badgedepot.code301.com/badge/kwalitee/Badge-Depot/0.0104" alt="Distribution kwalitee" /></a>
+    <a href="http://matrix.cpantesters.org/?dist=Badge-Depot%200.0104"><img src="https://badgedepot.code301.com/badge/cpantesters/Badge-Depot/0.0104" alt="CPAN Testers result" /></a>
+    </p>
+</div>
+
 # VERSION
 
-Version 0.0104, released 2015-03-21.
+Version 0.0104, released 2016-02-19.
 
 # SYNOPSIS
 
@@ -69,6 +78,10 @@ Optional (but recommended). [Uri](https://metacpan.org/pod/Types::URI).
 
 The url to link the badge to. The href attribute for the a tag when rendered to html. No link is created if this isn't set.
 
+## zilla
+
+This is not a user setable attribute, but rather can be used by plugins that might need to look at distribution meta data. This is only usable when using [Pod::Weaver::Section::Badges](https://metacpan.org/pod/Pod::Weaver::Section::Badges) together with [Dist::Zilla](https://metacpan.org/pod/Dist::Zilla).
+
 # METHODS
 
 These methods are used when rendering the badge, and are not useful inside badge classes.
@@ -101,7 +114,7 @@ Erik Carlsson <info@code301.com>
 
 # COPYRIGHT AND LICENSE
 
-This software is copyright (c) 2015 by Erik Carlsson <info@code301.com>.
+This software is copyright (c) 2016 by Erik Carlsson.
 
 This is free software; you can redistribute it and/or modify it under
 the same terms as the Perl 5 programming language system itself.
