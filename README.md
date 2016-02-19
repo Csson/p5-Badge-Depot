@@ -8,6 +8,7 @@ Badge::Depot - A framework for badges
     <a href="https://travis-ci.org/Csson/p5-Badge-Depot"><img src="https://api.travis-ci.org/Csson/p5-Badge-Depot.svg?branch=master" alt="Travis status" /></a>
     <a href="http://cpants.cpanauthors.org/dist/Badge-Depot-0.0104"><img src="https://badgedepot.code301.com/badge/kwalitee/Badge-Depot/0.0104" alt="Distribution kwalitee" /></a>
     <a href="http://matrix.cpantesters.org/?dist=Badge-Depot%200.0104"><img src="https://badgedepot.code301.com/badge/cpantesters/Badge-Depot/0.0104" alt="CPAN Testers result" /></a>
+    <img src="https://img.shields.io/badge/coverage-100.0%-brightgreen.svg" alt="coverage 100.0%" />
     </p>
 </div>
 
